@@ -1,0 +1,3 @@
+import Graphics 
+
+win = Window(500, 500)
