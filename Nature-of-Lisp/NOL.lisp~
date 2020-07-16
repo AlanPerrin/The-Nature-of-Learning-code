@@ -1,0 +1,3 @@
+;;;; NOL.lisp
+
+(in-package #:NOL)
