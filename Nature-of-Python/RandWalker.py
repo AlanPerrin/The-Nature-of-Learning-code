@@ -19,30 +19,29 @@ closing = False
 posX = int(winWidth / 2)
 posY = int(winHeight / 2)
          
-def PrettyRec():
-    pygame.draw.rect(win,(255, 255, 255),[posX, posY, 50, 50])
-
-def Walking():
+def Walking(posX, posY):
     choice = int(random.randrange(4))
     if choice == 0:
         posX += 1
-    elif choice == 1:
+    if choice == 1:
         posX -= 1
-    elif choice == 2:
+    if choice == 2:
         posY += 1
     else:
         posY -= 1
-
+        
+def PrettyRec():
+    pygame.draw.rect(win,(255, 255, 255),[posX, posY, 50, 50])
+    
 #========= Game Loop
 while not closing:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             closing = True
-      #  print(x)
+       # print("the x is:" + str(posX) + "\n the y is:" + str(posY))
+    Walking(posX, posY)
     PrettyRec()
     pygame.display.update()
-    Walking()
-    PrettyRec()
     clock.tick(30)
 
 #========= Ending 
