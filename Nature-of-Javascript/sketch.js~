@@ -1,0 +1,11 @@
+Walker w;   
+
+void setup() {
+  createCanvas(400,400);
+  w = new Walker(); 
+  background(255);
+}
+void draw() {
+  w.step(); 
+  w.display(); 
+}
